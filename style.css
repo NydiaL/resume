@@ -173,9 +173,7 @@ h2{
 
 
 @media (min-width: 694px)and (max-width:1090px){
-    *{
-        background-color: antiquewhite;
-    }
+
     #about-me{
     
         margin-top: 40px;
