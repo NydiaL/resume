@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* For the title hero div with an image in the background*/
+.title{
+  background-image: url("./images/Flowers-Background.jpg");    /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire div */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  width: 100%; /* Set a width for the div */
+  height: 80vh; /* Set a height for the div (100vh means 100% of the viewport height) */
+  position:relative;
+}
+
+/*For the title hero div background image to have .5 transparency*/
+.overlay {
+    position: absolute; /* Position the overlay relative to the title div */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5); /* Adjust the rgba values for color and transparency */
+  }
+
+
+.text-with-background{
+    background-color: #BFAA92;
+    color:white;
+    z-index: 1;
+    font-family: "Open Sans", sans-serif;
+    font-weight: light;
+    font-size: 1.5em;
+    padding: 0 20px;
+    letter-spacing: 3px;
+}
+#title-h1{
+    z-index: 1;
+}
+.text{
+    color:#BFAA92;
+    z-index: 1;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.5em;
+}
+
+.title{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    
+}
+h1,h2{
+    font-family: "Cormorant", serif;
+    color:#BFAA92;
+}
+
+h1{
+    font-size: 5em;
+}
+h2{
+    font-size: 3em;
+}
+
+/*--------------- About Me Section ------------------------*/ 
+#about-me{
+    margin-top: 40px;
+    height: 100vh;
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5px 10px;
+    grid-template-rows: 3fr 2fr 1fr 2.5fr 1fr 2.5fr 1fr 2.5fr;
+}
+
+
+#about-me-img{
+    grid-area: 2/1/-1/2;
+    display: flex;
+    align-items: end;
+}
+#about-me-img >img{
+    width: 100%;
+    transform: scaleX(-1);
+}
+#about-me-title{
+    grid-area: 1/2/2/3;
+    display:flex;
+    align-items: end;
+    padding-left: 100px;
+}
+#about-me > .text{
+    padding: 0 100px
+}
+
+/*----------------- Skills Section ---------------------*/
+#skills{
+    margin-top: 60px;
+    height: 100vh;
+    display:grid;
+    grid-template-columns: 1.5fr .5fr 1.5fr .5fr 1.5fr;
+    grid-template-rows: .75fr 2fr 1.5fr 1fr 1.5fr 1fr 1.5fr;
+    grid-template-areas:
+    ". . item1 . ."
+    ". . item2 . ."
+    "item3-1 item3-1 item3-1 item3-1 item3-1"
+    "item3 item3 item4 item5 item5"
+    "item6 item6 item7 item8 item8"
+    "item9 item9 item10 item11 item11"
+    "item12 item12 item13 item14 item14"
+}
+
+
+
+.title-description{
+    grid-area: 3/2/3/5
+}
+.item1 {
+    grid-area: item1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.75rem;
+}
+.item2 {
+    grid-area: item2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.9rem;
+}
+.item3-1{ 
+    grid-area: item3-1;
+    display:flex;
+    justify-content: center;
+    padding: 0 250px;
+}
+
+.item3, .item4, .item5,.item9,.item10,.item11{
+    display: flex;
+    align-items: center;
+}
+
+.item3, .item6,.item9,.item12{
+    padding: 0 50px;
+}
+ .item5,.item8,.item11,.item14{
+    padding: 0 50px;
+}
+.item3 { grid-area: item3; }
+.item4 { grid-area: item4; }
+.item5 { grid-area: item5; }
+.item6 { grid-area: item6; }
+.item7 { grid-area: item7; }
+.item8 { grid-area: item8; }
+.item9 { grid-area: item9; }
+.item10 { grid-area: item10; }
+.item11 { grid-area: item11; }
+.item12 { grid-area: item12; }
+.item13 { grid-area: item13; }
+.item14 { grid-area: item14; }
+
+
+/*------------------- Contact Me ------------------------*/
+
+#contact-me{
+    display: grid;
+    grid-template-rows: 8.25fr 3.5fr 1fr 1fr 2.75fr;
+    gap:10px;
+    height: 100vh;
+}
+#contact-me > div > img{
+    display: flex;
+    height: 50vh;
+}
+#contact-me >div{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+#contact-me-img{
+    padding: 30px 0;
+}
+#contact-me > div >h2{
+    align-items: flex-start;
+    padding-bottom: 20px;
+}
