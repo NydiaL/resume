@@ -4,13 +4,8 @@
     
 }
 
-.container{
-    display: flex;
-    flex-wrap: wrap;
-}
-
 /* For the title hero div with an image in the background*/
-.title{
+#title{
   background-image: url("./images/Flowers-Background.jpg");    /* Replace with your image path */
   background-size: cover; /* Ensures the image covers the entire div */
   background-position: center; /* Centers the image */
@@ -18,6 +13,12 @@
   width: 100%; /* Set a width for the div */
   height: 80vh; /* Set a height for the div (100vh means 100% of the viewport height) */
   position:relative;
+  z-index: -1;
+
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 /*For the title hero div background image to have .5 transparency*/
@@ -27,36 +28,26 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.5); /* Adjust the rgba values for color and transparency */
+    background-color: rgba(255, 255, 255, 0.75); /* Adjust the rgba values for color and transparency */
+    z-index: -1;
   }
 
-
-.text-with-background{
+  .text-with-background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #BFAA92;
     color:white;
-    z-index: 1;
     font-family: "Open Sans", sans-serif;
     font-weight: light;
     font-size: 1.5em;
     padding: 0 20px;
     letter-spacing: 3px;
 }
-#title-h1{
-    z-index: 1;
-}
 .text{
     color:#BFAA92;
-    z-index: 1;
     font-family: "Open Sans", sans-serif;
     font-size: 1.5em;
-}
-
-.title{
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    
 }
 h1,h2{
     font-family: "Cormorant", serif;
@@ -70,13 +61,15 @@ h2{
     font-size: 3em;
 }
 
-/*--------------- About Me Section ------------------------*/ 
+/*---------------------------- About Me ------------------------------*/
+
 #about-me{
+    
     margin-top: 40px;
-    height: 100vh;
+    width: 100%; /* Set a width for the div */
+    height: 80vh; /* Set a height for the div (100vh means 100% of the viewport height) */
     display:grid;
     grid-template-columns: 1fr 2fr;
-    gap: 5px 10px;
     grid-template-rows: 3fr 2fr 1fr 2.5fr 1fr 2.5fr 1fr 2.5fr;
 }
 
@@ -88,6 +81,7 @@ h2{
 }
 #about-me-img >img{
     width: 100%;
+    -webkit-transform-origin-x: scaleX(-1);
     transform: scaleX(-1);
 }
 #about-me-title{
@@ -100,84 +94,66 @@ h2{
     padding: 0 100px
 }
 
+
 /*----------------- Skills Section ---------------------*/
 #skills{
+    
     margin-top: 60px;
     height: 100vh;
     display:grid;
-    grid-template-columns: 1.5fr .5fr 1.5fr .5fr 1.5fr;
+    gap:10px;
+    padding: 50px 0;
+    grid-template-columns: 2fr 1.5fr 2fr;
     grid-template-rows: .75fr 2fr 1.5fr 1fr 1.5fr 1fr 1.5fr;
-    grid-template-areas:
-    ". . item1 . ."
-    ". . item2 . ."
-    "item3-1 item3-1 item3-1 item3-1 item3-1"
-    "item3 item3 item4 item5 item5"
-    "item6 item6 item7 item8 item8"
-    "item9 item9 item10 item11 item11"
-    "item12 item12 item13 item14 item14"
+    
+    background-color:beige;
+
 }
-
-
 
 .title-description{
-    grid-area: 3/2/3/5
-}
-.item1 {
-    grid-area: item1;
+    grid-area: 3/1/4/-1;
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 1.75rem;
+    padding:0 250px;
 }
-.item2 {
-    grid-area: item2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.9rem;
+#empty-cell-1{
+    grid-area: 1/1/3/2;
 }
-.item3-1{ 
-    grid-area: item3-1;
-    display:flex;
-    justify-content: center;
-    padding: 0 250px;
+#empty-cell-2{
+    grid-area: 1/3/3/4;
+}
+.first{
+    order:1;
+}
+.second{
+    order:2;
+}
+.third{
+    order:3;
+}
+.fourth{
+    order:4;
 }
 
-.item3, .item4, .item5,.item9,.item10,.item11{
-    display: flex;
-    align-items: center;
+.left{
+    padding:0 75px;
 }
-
-.item3, .item6,.item9,.item12{
-    padding: 0 50px;
+.right{
+    padding-left: 75px;
+    padding-right: 50px;
 }
- .item5,.item8,.item11,.item14{
-    padding: 0 50px;
-}
-.item3 { grid-area: item3; }
-.item4 { grid-area: item4; }
-.item5 { grid-area: item5; }
-.item6 { grid-area: item6; }
-.item7 { grid-area: item7; }
-.item8 { grid-area: item8; }
-.item9 { grid-area: item9; }
-.item10 { grid-area: item10; }
-.item11 { grid-area: item11; }
-.item12 { grid-area: item12; }
-.item13 { grid-area: item13; }
-.item14 { grid-area: item14; }
-
 
 /*------------------- Contact Me ------------------------*/
 
 #contact-me{
+    
     display: grid;
     grid-template-rows: 8.25fr 3.5fr 1fr 1fr 2.75fr;
     gap:10px;
     height: 100vh;
 }
 #contact-me > div > img{
-    display: flex;
+    display: flexbox;
     height: 50vh;
 }
 #contact-me >div{
@@ -191,4 +167,94 @@ h2{
 #contact-me > div >h2{
     align-items: flex-start;
     padding-bottom: 20px;
+}
+
+
+
+
+@media (min-width: 694px)and (max-width:1090px){
+    *{
+        background-color: antiquewhite;
+    }
+    #about-me{
+    
+        margin-top: 40px;
+        width: 100%; /* Set a width for the div */
+        height: auto; /* Set a height for the div (100vh means 100% of the viewport height) */
+        display:grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 3fr 2fr 1fr 2.5fr 1fr 2.5fr 1fr 2.5fr;
+    }
+
+}
+@media (max-width: 693px){
+
+    /* About Me */
+    #about-me{
+        /*display:grid;
+        grid-template-rows: repeat(9,auto);*/
+        display: flex;
+        flex-flow: column;
+        align-items:flex-start;
+        height: auto;
+        margin: 10px;
+        padding:10px 0;
+    }
+    #about-me-img{
+        width: 0;
+        height: 0;
+    }
+
+    #about-me-title{
+        grid-area: 1/2/2/3;
+        display:flex;
+        align-items: end;
+        padding: 0 20px;
+    }
+    #about-me > .text{
+        padding: 0 20px;
+    }
+
+    /* Skills */
+
+    #skills{
+        display: flex;
+        flex-flow: column;
+        align-items:flex-start;
+        height: auto;
+        margin: 0px;
+        padding:10px 20px;
+        background-color:beige;
+    }
+
+    .title-description{
+        display: flex;
+        flex-flow: column;
+        align-items:flex-start;
+        padding:0 0px;
+    }
+
+    .first,.second,.third,.fourth,.left,.right{
+        order:0;
+        display: flex;
+        flex-flow: column;
+        align-items:flex-start;
+        padding: 0;
+    }
+
+    /* Contact Me */
+
+    #contact-me{
+        display: flex;
+        flex-flow: column;
+        align-items:center;
+        height: auto;
+    }
+    #contact-me-img{
+        padding: 0;
+    }
+    #contact-me> div > img{
+        width: 25vh;
+        height: 25vh;
+    }
 }
